@@ -21,7 +21,5 @@ function graph(arr) {
     returnArr.push(str);
   }
 
-  console.log(returnArr.join("\n"));
-
   return returnArr.join("\n");
 }
