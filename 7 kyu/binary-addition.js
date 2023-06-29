@@ -1,5 +1,5 @@
 function addBinary(a, b) {
-    const summ = a + b;
+  const summ = a + b;
 
-    return summ.toString(2);
+  return summ.toString(2);
 }
