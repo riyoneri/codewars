@@ -53,7 +53,6 @@ var Vector = function (components) {
 
   this.equals = function (oarr) {
     const otherArr = oarr.arr;
-    console.log(oarr.arr, "   ", this.arr);
     if (this.arr.length !== otherArr.length) return false;
     for (let i = 0; i < otherArr.length; i++) {
       if (otherArr[i] !== this.arr[i]) return false;
