@@ -1,0 +1,1 @@
+const pigIt = (str) => str.replace(/(\w)(\w*)(\s|$)/, "$2$1ay$3")
