@@ -1,0 +1,1 @@
+const alphanumeric = string => !/[\W_ ]|^$/g.test(string)
