@@ -1,7 +1,11 @@
 export function dropCap(s: string): string {
-  let arr = s.match(/(^\w|.(?<= .))/g);
-  console.log(arr)
-  return "lion";
+  return s
+    .toLowerCase()
+    .replace(/^\w|(?<= ).(?=\w{2})/g, (str: string) => str.toUpperCase());
 }
 
-console.log(dropCap("Apple Banana"));
+console.log(
+  dropCap(
+    "Revelation of the contents outraged American public opinion, and helped generate"
+  )
+);
