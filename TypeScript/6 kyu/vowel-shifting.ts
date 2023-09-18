@@ -1,27 +1,27 @@
 export function vowelShift(text: string | null, n: number): string | null {
-  if (!text) return `Vowels are "a,e,i,o,u".`;
-
-  let vowels: RegExpMatchArray | null = text.match(/[aioue]/g);
+  if (!text) return text;
+  const vowels: RegExpMatchArray | null = text.match(/[aioue]/gi);
 
   if (!vowels) return text;
-
   if (n > 0) for (let i = 0; i < n; i++) vowels.unshift(vowels.pop()!);
+  if (n < 0) for (let i = n; i < 0; i++) vowels.push(vowels.shift()!);
 
-  if (n < 0) for (let i = 0; i < n; i++) vowels.push(vowels.shift()!);
+  let returnStr: string = "";
 
-  let returnText: string = "";
   for (let i = 0, j = 0; i < text.length; i++) {
-    if (text[i].match(/[aioue]/)?.length) {
-      returnText += vowels[j];
+    if (/[aioue]/i.test(text[i])) {
+      returnStr += vowels[j];
       j++;
       continue;
     }
-    returnText += text[i];
+    returnStr += text[i];
   }
 
-  return returnText;
+  return returnStr;
 }
 
-console.log(vowelShift("This is a test!", 1));
-console.log(vowelShift("This is a test!", 1));
-console.log(vowelShift("This is a test!", 3));
+// console.log(vowelShift("This is a test!", 1));
+console.log(vowelShift("This is a test!", -2));
+// console.log(vowelShift("This is a test!", 3));
+// console.log(vowelShift("This is a test!", -1));
+console.log(vowelShift("mrxtAM IzXYIVgKIFyOWwJ.", -39));
